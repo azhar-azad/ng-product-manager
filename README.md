@@ -215,3 +215,66 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 * Service is injected when component is instantiated
 
 
+## NOTES: Retrieving Data using HTTP
+
+### Http Service
+
+###### 
+* Define a dependency for the HttpClient service: Use constructor parameter
+* Create methods for each http request
+* Call the desired http method, such as get: Pass in the URL
+* Use generics to specify the returned type
+* Add error handling
+
+###### Subscribing
+* Call the subscribe method of the returned Observable
+* Provide a function to handle an emitted item: Normally assigns a property to the returned JSON object
+* Provide an error function to handle any returned errors
+
+
+## NOTES: Navigation and Routing Basics
+
+### Displaying Components
+
+###### Nest-able Components
+* Define a selector
+* Nest in another component
+* No route
+
+###### Routed Component
+* No selector
+* Configure routes
+* Tie routes to action
+* Place the view
+
+### Configuring Routes
+
+###### Define the base element
+
+###### Add RouterModule
+* Add each route (RouterModule.forRoot([]))
+* Order of the routing paths matters
+
+###### path: Url segment for the route
+* No leading slash ('/')
+* '' for default route
+* '**' for wildcard route: implement 404 not found page
+
+###### component
+* Not string name; So not enclosed in quotes
+
+### Tying Routes to Actions
+
+###### Add the routerLink directive as an attribute
+* Clickable eleement
+* Enclose in square brackets
+
+###### Bind to a link parameters array
+* First element is the path
+* All other elements are route parameters
+
+### Placing the view
+
+###### Add the router-outlet directive
+* Identifies where to display the routed component's view
+* Specified in the host component's template
