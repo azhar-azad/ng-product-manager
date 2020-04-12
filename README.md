@@ -44,6 +44,16 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 * Use PascalCasing
 * Append "Component" to the name
 
+### Component: Interface
+
+###### Creating Interface
+* interface keyword
+* export it
+
+###### Implementing interface
+* _**implements**_ keyword and interface name
+* Write code for each property and method in implementing class
+
 ###### export keyword
 
 ###### Data in properties
@@ -66,6 +76,18 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ###### Module path
 * Enclose in quotes
 * Correct spelling/casing
+
+### Lifecycle Hooks
+
+* Import the lifecycle hook interface
+* Implement the lifecycle hook interface
+* Write code for the hook method
+
+###### _OnInit_
+* Perform component initialization, retrieve data from backend
+
+###### _OnChanges_
+* Perform action after change to input properties
 
 
 ## NOTES: TEMPLATES, INTERPOLATION and DIRECTIVES
@@ -127,5 +149,69 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 * Pipe parameter: Separated with colon (:)
 * _{{ product.price | currency : 'USD' : 'symbol' : '1.2-2' }}_
 
+###### Building a Custom Pipes
+* Import Pipe and PipeTransform
+* Create a class that implements PipeTransform - export the class
+* Write code for the Transform method
+* Decorate the class with the Pipe decorator
+
+###### Using a Custom Pipes
+* Import the custom pipe
+* Add the pipe to the declaration array of on Angular module
+* Any template associated with a component is also declared in that Angular module can use that pipe
+* Use the pipe in the template: Pipe character (|) - Pipe Name - Pipe Arguments (separeted by colons)
+
+
+## NOTES: Nested Component
+
+### Input Decorator
+* Attached to a property of any type
+* Prefix with @; Suffix with ()
+
+### Output Decorator
+* Attached to a property declared as an EventEmitter
+* Use the generic argument to define the event payload type
+* Use the new keyword to create and instance of the EventEmitter
+* Prefix with @; Suffix with ()
+
+### Container Component
+
+###### Use the directive
+* Directive name -- nested component's selector
+* Use property binding to pass data to the nested component
+* Use event binding to respond to events from the nested component
+* Use _$event_ to access the event payload passed from the nested component
+
+
+## NOTES: Services and Dependency Injection
+
+### Creating a Service
+
+###### Service Class
+* Clear name
+* Use PascalCasing
+* Append "Service" to the name
+* export keyword
+
+###### Service Decorator
+* Use Injectable
+* Prefix with @; Suffix with ()
+
+### Registering a Service
+
+###### Appropriate level of hierarchy
+* Root application injector if the service is used throughout the application
+* Specific component's injector if only that component uses the service
+
+###### Service injectable decorator
+* Set the _providedIn_ property to 'root'
+
+###### Component decorator
+* Set the providers property to the service
+
+### Dependency Injection
+* Specify the service as a dependency
+* Use a constructor parameter
+* Service is injected when component is instantiated
 
 
